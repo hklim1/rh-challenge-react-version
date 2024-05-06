@@ -9,9 +9,9 @@ import "./UsersScreen.scss";
 const localData = [
   {
     id: 1,
-    first_name: "LocalHost",
-    last_name: "Offline",
-    email: "need@8000.com",
+    first_name: "Joshua",
+    last_name: "Williams",
+    email: "josh@williams.com",
   },
   {
     id: 2,
@@ -28,20 +28,20 @@ const localData = [
   {
     id: 4,
     first_name: "Marj",
-    last_name: "Simpson",
+    last_name: "Hurta",
     email: "marj@nbc.com",
   },
   {
     id: 5,
     first_name: "Jackson",
     last_name: "Pollack",
-    email: "jbird@art.com",
+    email: "jpoll@art.com",
   },
   {
     id: 6,
     first_name: "Chandler",
     last_name: "Handler",
-    email: "bestdog@ever.com",
+    email: "bestdog@vetmed.com",
   },
   {
     id: 7,
@@ -53,13 +53,13 @@ const localData = [
     id: 8,
     first_name: "Kwabena",
     last_name: "Anko",
-    email: "best@friend.com",
+    email: "kankobb@edu.com",
   },
   {
     id: 9,
     first_name: "Randy",
     last_name: "Rice",
-    email: "randy@rice.com",
+    email: "randy@gmail.com.com",
   },
   {
     id: 10,
@@ -71,13 +71,13 @@ const localData = [
     id: 11,
     first_name: "Nathan",
     last_name: "Fillion",
-    email: "lapd@rookie.com",
+    email: "rookie@lapd.com",
   },
   {
     id: 12,
     first_name: "Kendrick",
     last_name: "Lamar",
-    email: "like@newsong.org",
+    email: "musician@aol.com",
   },
   {
     id: 13,
@@ -89,13 +89,13 @@ const localData = [
     id: 14,
     first_name: "Troy",
     last_name: "Barnes",
-    email: "troy@inthemorning.com",
+    email: "troy@gmail.com",
   },
   {
     id: 15,
-    first_name: "Running",
-    last_name: "Out",
-    email: "of@names.net",
+    first_name: "Rhonda",
+    last_name: "Stokes",
+    email: "rhonda@comcast.com",
   },
   {
     id: 16,
@@ -124,8 +124,8 @@ const localData = [
   {
     id: 20,
     first_name: "Miranda",
-    last_name: "Rights",
-    email: "silence@yahoo.com",
+    last_name: "Rickhoff",
+    email: "miranda.ricks11@yahoo.com",
   },
 ];
 
