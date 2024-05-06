@@ -1,2 +1,19 @@
 $primary-color: #7BC4E0;
 $secondary-color: #6EA6BE;
+#navbarContainer {
+    // border: solid 1px black;
+    align-items: center;
+    background-color: #ffffff;
+    display: inline-flex;
+    justify-content: space-between;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    // padding-left: 8%;
+    // padding-right: 8%;
+    width: 100%;
+    // position: relative;
+}
+
+.navLinks {
+    margin-left: 16px;
+}

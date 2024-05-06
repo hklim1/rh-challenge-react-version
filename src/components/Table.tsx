@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export interface User {
   id: number;
@@ -15,25 +15,45 @@ interface TableProps {
 
 export const Table = ({ data, searchTerm, filters }: TableProps) => {
   const [filteredData, setFilteredData] = useState(data);
+  const [isEdit, setIsEdit] = useState(false);
+  const [editedUserId, setEditedUserId] = useState<number | undefined>(
+    undefined
+  );
+
+  const firstNameRef = useRef<HTMLInputElement>(null);
+  const lastNameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     setFilteredData(data);
   }, [data]);
 
-  const onDelete = useCallback(
-    (userToDelete: User) => {
-      const newData = filteredData.filter(
-        (currentUser) =>
-          !(
-            currentUser.first_name === userToDelete.first_name &&
-            currentUser.last_name === userToDelete.last_name &&
-            currentUser.email === userToDelete.email
-          )
-      );
-      setFilteredData(newData);
-    },
-    [filteredData]
-  );
+  const onDelete = (userToDelete: User) => {
+    const newData = filteredData.filter(
+      (currentUser) =>
+        !(
+          currentUser.first_name === userToDelete.first_name &&
+          currentUser.last_name === userToDelete.last_name &&
+          currentUser.email === userToDelete.email
+        )
+    );
+    setFilteredData(newData);
+  };
+
+  const onEdit = (user: User) => {
+    setIsEdit(true);
+    setEditedUserId(user.id);
+  };
+
+  const onSave = (firstName: string, lastName: string, email: string) => {
+    const userIndex = filteredData.findIndex((u) => u.id === editedUserId);
+    filteredData[userIndex].first_name = firstName;
+    filteredData[userIndex].last_name = lastName;
+    filteredData[userIndex].email = email;
+    setFilteredData(filteredData);
+    setIsEdit(false);
+    setEditedUserId(undefined);
+  };
 
   const newData = filteredData.filter((user) => {
     if (searchTerm === "") {
@@ -42,7 +62,9 @@ export const Table = ({ data, searchTerm, filters }: TableProps) => {
     const first_nameHasSearch = user.first_name
       .toLowerCase()
       .includes(searchTerm);
-    const last_nameHasSearch = user.last_name.toLowerCase().includes(searchTerm);
+    const last_nameHasSearch = user.last_name
+      .toLowerCase()
+      .includes(searchTerm);
     const emailHasSearch = user.email.toLowerCase().includes(searchTerm);
     let results = [];
 
@@ -76,13 +98,52 @@ export const Table = ({ data, searchTerm, filters }: TableProps) => {
       <th>Email</th>
       <th>Actions</th>
       {newData.map((currentUser) => {
+        const isEditingUser = isEdit && currentUser.id === editedUserId;
         return (
           <tr>
-            <td>{currentUser.first_name}</td>
-            <td>{currentUser.last_name}</td>
-            <td>{currentUser.email}</td>
             <td>
-              <button onClick={() => onDelete(currentUser)}>delete</button>
+              {isEditingUser ? (
+                <input
+                  ref={firstNameRef}
+                  defaultValue={currentUser.first_name}
+                />
+              ) : (
+                currentUser.first_name
+              )}
+            </td>
+            <td>
+              {isEditingUser ? (
+                <input ref={lastNameRef} defaultValue={currentUser.last_name} />
+              ) : (
+                currentUser.last_name
+              )}
+            </td>
+            <td>
+              {isEditingUser ? (
+                <input ref={emailRef} defaultValue={currentUser.email} />
+              ) : (
+                currentUser.email
+              )}
+            </td>
+            <td>
+              {isEditingUser ? (
+                <button
+                  onClick={() =>
+                    onSave(
+                      firstNameRef.current?.value ?? currentUser.first_name,
+                      lastNameRef.current?.value ?? currentUser.last_name,
+                      emailRef.current?.value ?? currentUser.email
+                    )
+                  }
+                >
+                  save
+                </button>
+              ) : (
+                <>
+                  <button onClick={() => onDelete(currentUser)}>delete</button>
+                  <button onClick={() => onEdit(currentUser)}>edit</button>
+                </>
+              )}
             </td>
           </tr>
         );
