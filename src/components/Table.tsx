@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 
-interface User {
-  firstName: string;
-  lastName: string;
+export interface User {
+  id: number;
+  first_name: string;
+  last_name: string;
   email: string;
 }
 
@@ -15,13 +16,17 @@ interface TableProps {
 export const Table = ({ data, searchTerm, filters }: TableProps) => {
   const [filteredData, setFilteredData] = useState(data);
 
+  useEffect(() => {
+    setFilteredData(data);
+  }, [data]);
+
   const onDelete = useCallback(
     (userToDelete: User) => {
       const newData = filteredData.filter(
         (currentUser) =>
           !(
-            currentUser.firstName === userToDelete.firstName &&
-            currentUser.lastName === userToDelete.lastName &&
+            currentUser.first_name === userToDelete.first_name &&
+            currentUser.last_name === userToDelete.last_name &&
             currentUser.email === userToDelete.email
           )
       );
@@ -34,24 +39,24 @@ export const Table = ({ data, searchTerm, filters }: TableProps) => {
     if (searchTerm === "") {
       return true;
     }
-    const firstNameHasSearch = user.firstName
+    const first_nameHasSearch = user.first_name
       .toLowerCase()
       .includes(searchTerm);
-    const lastNameHasSearch = user.lastName.toLowerCase().includes(searchTerm);
+    const last_nameHasSearch = user.last_name.toLowerCase().includes(searchTerm);
     const emailHasSearch = user.email.toLowerCase().includes(searchTerm);
     let results = [];
 
     if (filters.length === 0) {
-      return firstNameHasSearch || lastNameHasSearch || emailHasSearch;
+      return first_nameHasSearch || last_nameHasSearch || emailHasSearch;
     }
 
     for (let i = 0; i < filters.length; i++) {
       const element = filters[i];
       if (element == "first") {
-        results.push(firstNameHasSearch);
+        results.push(first_nameHasSearch);
       }
       if (element == "last") {
-        results.push(lastNameHasSearch);
+        results.push(last_nameHasSearch);
       }
       if (element == "email") {
         results.push(emailHasSearch);
@@ -73,8 +78,8 @@ export const Table = ({ data, searchTerm, filters }: TableProps) => {
       {newData.map((currentUser) => {
         return (
           <tr>
-            <td>{currentUser.firstName}</td>
-            <td>{currentUser.lastName}</td>
+            <td>{currentUser.first_name}</td>
+            <td>{currentUser.last_name}</td>
             <td>{currentUser.email}</td>
             <td>
               <button onClick={() => onDelete(currentUser)}>delete</button>

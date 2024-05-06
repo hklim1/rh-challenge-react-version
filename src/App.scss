@@ -1,5 +1,9 @@
+$primary-color: #7BC4E0;
+$secondary-color: #6EA6BE;
+
 .App {
   text-align: center;
+  padding: 5% 8% 5% 8%;
 }
 
 .App-logo {
@@ -32,6 +36,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
