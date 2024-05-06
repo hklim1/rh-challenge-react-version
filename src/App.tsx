@@ -1,47 +1,14 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { Navbar } from './components/Navbar';
-import { SearchBar } from './components/SearchBar';
-import { Table } from "./components/Table";
-import { Filter } from "./components/Filter";
-
-const users = [
-  {
-    firstName: "Heather",
-    lastName: "Lim",
-    email: "heatherlim@gmail.com",
-  },
-  {
-    firstName: "Patrick",
-    lastName: "Guo",
-    email: "Patrickg@gmail.com",
-  },
-  {
-    firstName: "Kwabena",
-    lastName: "Banana",
-    email: "kwBanana@gmail.com",
-  },
-  {
-    firstName: "XyZ",
-    lastName: "GhI",
-    email: "lbco@puf.der",
-  },
-];
+import { useState } from "react";
+import "./App.scss";
+import { PostsScreen } from "./screens/PostsScreen";
+import { UsersScreen } from "./screens/UsersScreen";
 
 function App() {
-
-  const [searchTerm, setSearchTerm] = useState("");
-  const [filters, setFilters] = useState<string[]>([]);
-
+  const [showPosts, setShowPosts] = useState(false);
   return (
     <div className="App">
-      <Navbar />
-      <SearchBar
-        onChange={(newSearch) => setSearchTerm(newSearch.toLowerCase())}
-      />
-      <Filter onChange={setFilters} />
-      <Table data={users} searchTerm={searchTerm} filters={filters} />
+      <button onClick={() => setShowPosts(!showPosts)}>Show Posts</button>
+      {showPosts ? <UsersScreen /> : <PostsScreen />}
     </div>
   );
 }
