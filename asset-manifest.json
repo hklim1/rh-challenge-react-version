@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/rh-challenge-react-version/static/css/main.f833d8d4.css",
-    "main.js": "/rh-challenge-react-version/static/js/main.bab0c068.js",
+    "main.js": "/rh-challenge-react-version/static/js/main.4abe21c9.js",
     "static/js/453.aba34d30.chunk.js": "/rh-challenge-react-version/static/js/453.aba34d30.chunk.js",
     "static/media/jabberLogo.svg": "/rh-challenge-react-version/static/media/jabberLogo.3b2de3789736628648cae3edf46021b3.svg",
     "index.html": "/rh-challenge-react-version/index.html",
     "main.f833d8d4.css.map": "/rh-challenge-react-version/static/css/main.f833d8d4.css.map",
-    "main.bab0c068.js.map": "/rh-challenge-react-version/static/js/main.bab0c068.js.map",
+    "main.4abe21c9.js.map": "/rh-challenge-react-version/static/js/main.4abe21c9.js.map",
     "453.aba34d30.chunk.js.map": "/rh-challenge-react-version/static/js/453.aba34d30.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f833d8d4.css",
-    "static/js/main.bab0c068.js"
+    "static/js/main.4abe21c9.js"
   ]
 }
