@@ -21,7 +21,7 @@ export const Navbar = () => {
           >
             ReactJS Repo
           </a>
-          <a href="/" className="active">
+          <a href="/rh-challenge-react-version" className="active">
             Users
           </a>
         </div>
