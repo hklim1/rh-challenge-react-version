@@ -1,0 +1,55 @@
+$primary-color: #7BC4E0;
+$secondary-color: #6EA6BE;
+
+#bottomBanner {
+    border-top: solid 3px white;
+    display: inline-flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+#connectText {
+    color: #ffffff;
+    // text-decoration: underline;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 28px;
+}
+
+#copyright {
+    color: white;
+}
+
+#footerContainer {
+    background-color: $secondary-color;
+    padding: 2% 8% 1% 8%;
+}
+
+#footerLinks {
+    align-items: center;
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footerText {
+    color: white;
+}
+
+#legalLinks {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+}
+
+.socialLinks {
+    margin-left: 12px;
+    margin-top: 10px;
+}
+
+#socialLinksContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
