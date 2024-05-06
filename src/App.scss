@@ -2,9 +2,14 @@ $primary-color: #7BC4E0;
 $secondary-color: #6EA6BE;
 
 .App {
-  text-align: center;
-  padding: 5% 8% 5% 8%;
-}
+  background-color: rgb(123, 196, 224, 0.3);
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // text-align: center;
+    // padding: 5%;
+    // margin: 5% 8% 5% 8%;
+  }
 
 .App-logo {
   height: 40vmin;
