@@ -1,5 +1,11 @@
+.filterButton {
+    margin-right: 8px;
+}
 #filterButtonsContainer {
     display: flex;
-    justify-content: space-evenly;
-    width: 32%;
+}
+
+#filterIcon {
+    margin-left: 10px;
+    margin-right: 8px;
 }
