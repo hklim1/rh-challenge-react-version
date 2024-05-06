@@ -26,24 +26,18 @@ export const Filter = ({ onChange }: FilterProps) => {
       <div id="filterIcon">
         <ListFilter size={30} />
       </div>
-      <div className="filterButton">
-        <FilterButton
-          title={"First Name"}
-          onChange={(isActive) => onChangeFilters(isActive, "first")}
-        />
-      </div>
-      <div className="filterButton">
-        <FilterButton
-          title={"Last Name"}
-          onChange={(isActive) => onChangeFilters(isActive, "last")}
-        />
-      </div>
-      <div className="filterButton">
-        <FilterButton
-          title={"Email"}
-          onChange={(isActive) => onChangeFilters(isActive, "email")}
-        />
-      </div>
+      <FilterButton
+        title={"First Name"}
+        onChange={(isActive) => onChangeFilters(isActive, "first")}
+      />
+      <FilterButton
+        title={"Last Name"}
+        onChange={(isActive) => onChangeFilters(isActive, "last")}
+      />
+      <FilterButton
+        title={"Email"}
+        onChange={(isActive) => onChangeFilters(isActive, "email")}
+      />
     </div>
   );
 };

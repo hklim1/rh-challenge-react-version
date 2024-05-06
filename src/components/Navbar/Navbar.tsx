@@ -21,7 +21,9 @@ export const Navbar = () => {
           >
             ReactJS Repo
           </a>
-          <a href="/users">Users</a>
+          <a href="/users" className="active">
+            Users
+          </a>
         </div>
       </div>
     </>
