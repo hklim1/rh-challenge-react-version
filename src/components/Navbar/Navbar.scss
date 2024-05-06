@@ -1,5 +1,18 @@
 $primary-color: #7BC4E0;
 $secondary-color: #6EA6BE;
+a {
+    color: #496E7E;
+    font-size: 24px;
+    font-variant-caps: all-small-caps;
+    margin-left: 60px;
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    border-bottom: solid 3px $secondary-color;
+    padding-bottom: 4px;
+}
 #navbarContainer {
     // border: solid 1px black;
     align-items: center;

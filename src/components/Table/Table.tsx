@@ -98,7 +98,7 @@ export const Table = ({ data, searchTerm, filters }: TableProps) => {
       <table id="dataTable">
         <th>First name</th>
         <th>Last name</th>
-        <th>Email</th>
+        <th>Email Address</th>
         <th>Actions</th>
         {newData.map((currentUser) => {
           const isEditingUser = isEdit && currentUser.id === editedUserId;
