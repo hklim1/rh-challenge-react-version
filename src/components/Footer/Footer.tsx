@@ -33,7 +33,7 @@ export const Footer = () => {
           </div>
         </div>
         <div id="bottomBanner">
-          <text id="copyright">© 2024 Jibber Jabber Inc.</text>
+          <text className="footerText">© 2024 Jibber Jabber Inc.</text>
           <div id="legalLinks">
             <text className="footerText">Terms and Conditions</text>
             <text>•</text>

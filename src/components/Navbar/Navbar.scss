@@ -1,5 +1,6 @@
 $primary-color: #7BC4E0;
 $secondary-color: #6EA6BE;
+
 a {
     color: #496E7E;
     font-size: 24px;
@@ -9,19 +10,15 @@ a {
 }
 
 a:hover,
-a:active {
+.active {
     border-bottom: solid 3px $secondary-color;
     padding-bottom: 4px;
 }
+
 #navbarContainer {
-    // border: solid 1px black;
     align-items: center;
     background-color: #ffffff;
     display: inline-flex;
     justify-content: space-between;
     padding: 2% 8% 1% 8%;
-}
-
-.navLinks {
-    margin-left: 16px;
 }

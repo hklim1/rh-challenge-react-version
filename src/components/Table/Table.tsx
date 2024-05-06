@@ -30,6 +30,7 @@ export const Table = ({ data, searchTerm, filters }: TableProps) => {
     setFilteredData(data);
   }, [data]);
 
+  // CRUD OPERATIONS FOR TABLE ROWS
   const onDelete = (userToDelete: User) => {
     const newData = filteredData.filter(
       (currentUser) =>
@@ -57,6 +58,7 @@ export const Table = ({ data, searchTerm, filters }: TableProps) => {
     setEditedUserId(undefined);
   };
 
+  // FILTER LOGIC
   const newData = filteredData.filter((user) => {
     if (searchTerm === "") {
       return true;
@@ -93,6 +95,7 @@ export const Table = ({ data, searchTerm, filters }: TableProps) => {
     return false;
   });
 
+  // TABLE
   return (
     <div id="table-container">
       <table id="dataTable">

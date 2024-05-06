@@ -1,10 +1,6 @@
 import { useState } from "react";
 import "./FilterButton.scss";
 
-interface StyleSheet {
-  [key: string]: React.CSSProperties;
-}
-
 interface FilterButtonProps {
   title: string;
   onChange: (isActive: boolean) => void;

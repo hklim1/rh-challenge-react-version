@@ -5,20 +5,15 @@ $secondary-color: #6EA6BE;
     border-top: solid 3px white;
     display: inline-flex;
     justify-content: space-between;
-    padding-top: 10px;
     padding-bottom: 10px;
+    padding-top: 10px;
     width: 100%;
 }
 
 #connectText {
     color: #ffffff;
-    // text-decoration: underline;
     font-family: 'Courier New', Courier, monospace;
     font-size: 28px;
-}
-
-#copyright {
-    color: white;
 }
 
 #footerContainer {
@@ -49,7 +44,8 @@ $secondary-color: #6EA6BE;
 }
 
 #socialLinksContainer {
+    align-items: flex-end;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    margin-bottom: 5px;
 }
