@@ -1,0 +1,128 @@
+$primary-color: #7BC4E0;
+$secondary-color: #6EA6BE;
+
+table {
+    border: solid 3px #7BC4E0;
+    border-collapse: separate;
+    border-radius: 20px;
+    border-spacing: 0;
+    width: 100%;
+}
+
+#table-container {
+    padding-top: 2%;
+}
+
+#editButton {
+    background-color: #ffffff;
+    border: solid 3px #EEDF90;
+    border-radius: 6px;
+    color: #EEDF90;
+    margin-right: 5px;
+}
+
+#editButton:hover {
+    background-color: #EEDF90;
+    border: solid 3px #EEDF90;
+    border-radius: 8px;
+    color: #ffffff;
+    margin-right: 5px;
+}
+
+#deleteButton {
+    background-color: #ffffff;
+    border: solid 3px rgb(255, 87, 87, 0.5);
+    border-radius: 6px;
+    color: rgb(255, 87, 87, 0.5);
+    margin-right: 5px;
+}
+
+#deleteButton:hover {
+    background-color: #FF5757;
+    border: solid 3px #FF5757;
+    border-radius: 6px;
+    color: #ffffff;
+    margin-right: 5px;
+}
+
+#saveButton {
+    background-color: #ffffff;
+    border: solid 3px #7ADEB4;
+    border-radius: 6px;
+    color: #7ADEB4;
+    margin-right: 5px;
+}
+
+#saveButton:hover {
+    background-color: #7ADEB4;
+    border: solid 3px #7ADEB4;
+    border-radius: 6px;
+    color: #ffffff;
+    margin-right: 5px;
+}
+
+#dataTable tr:hover td {
+    background-color: rgb(123, 196, 224, 0.2)
+}
+th {
+    background-color: #7BC4E0;
+        border-top: none;
+        color: white;
+        font-size: 22px;
+        font-weight: 400;
+        font-variant-caps: all-small-caps;
+        height: 40px;
+        padding-left: 30px;
+        padding-right: 30px;
+        text-align: left;
+        vertical-align: middle;
+    }
+    
+    th:first-child {
+        border-left: none;
+        border-top-left-radius: 16px;
+    }
+    
+    th:nth-child(4) {
+        border-left: none;
+        border-top-right-radius: 16px;
+    }
+    
+    // th:last-child {
+    //     border-left: none;
+    //     border-top-right-radius: 16px;
+    // }
+    
+    tr:last-child {
+        border-bottom-left-radius: 16px;
+    }
+    
+    td {
+        background-color: white;
+        border-bottom: solid 1px grey;
+    height: 40px;
+        padding-left: 30px;
+            padding-right: 30px;
+        }
+        
+        // tr:first-child td:first-child {
+        //     border-top-left-radius: 20px;
+        // }
+        
+        // tr:first-child td:last-child {
+        //     border-top-right-radius: 20px;
+        // }
+        
+        tr:last-child td:first-child {
+            border-bottom-left-radius: 20px;
+            border: none;
+        }
+        
+        tr:last-child td {
+            border: none;
+        }
+        
+        tr:last-child td:last-child {
+            border-bottom-right-radius: 20px;
+            border: none;
+}

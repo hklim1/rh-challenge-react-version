@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import "./Table.scss";
+import { Save, Edit, Trash2 } from "lucide-react";
 
 export interface User {
   id: number;
@@ -92,62 +94,75 @@ export const Table = ({ data, searchTerm, filters }: TableProps) => {
   });
 
   return (
-    <table>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Email</th>
-      <th>Actions</th>
-      {newData.map((currentUser) => {
-        const isEditingUser = isEdit && currentUser.id === editedUserId;
-        return (
-          <tr>
-            <td>
-              {isEditingUser ? (
-                <input
-                  ref={firstNameRef}
-                  defaultValue={currentUser.first_name}
-                />
-              ) : (
-                currentUser.first_name
-              )}
-            </td>
-            <td>
-              {isEditingUser ? (
-                <input ref={lastNameRef} defaultValue={currentUser.last_name} />
-              ) : (
-                currentUser.last_name
-              )}
-            </td>
-            <td>
-              {isEditingUser ? (
-                <input ref={emailRef} defaultValue={currentUser.email} />
-              ) : (
-                currentUser.email
-              )}
-            </td>
-            <td>
-              {isEditingUser ? (
-                <button
-                  onClick={() =>
-                    onSave(
-                      firstNameRef.current?.value ?? currentUser.first_name,
-                      lastNameRef.current?.value ?? currentUser.last_name,
-                      emailRef.current?.value ?? currentUser.email
-                    )
-                  }
-                >
-                  save
-                </button>
-              ) : (
-                <>
-                  <button onClick={() => onDelete(currentUser)}>delete</button>
-                  <button onClick={() => onEdit(currentUser)}>edit</button>
-                </>
-              )}
-            </td>
-          </tr>
-        );
-      })}
-    </table>
+    <div id="table-container">
+      <table id="dataTable">
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Actions</th>
+        {newData.map((currentUser) => {
+          const isEditingUser = isEdit && currentUser.id === editedUserId;
+          return (
+            <tr>
+              <td>
+                {isEditingUser ? (
+                  <input
+                    ref={firstNameRef}
+                    defaultValue={currentUser.first_name}
+                  />
+                ) : (
+                  currentUser.first_name
+                )}
+              </td>
+              <td>
+                {isEditingUser ? (
+                  <input
+                    ref={lastNameRef}
+                    defaultValue={currentUser.last_name}
+                  />
+                ) : (
+                  currentUser.last_name
+                )}
+              </td>
+              <td>
+                {isEditingUser ? (
+                  <input ref={emailRef} defaultValue={currentUser.email} />
+                ) : (
+                  currentUser.email
+                )}
+              </td>
+              <td>
+                {isEditingUser ? (
+                  <button
+                    id="saveButton"
+                    onClick={() =>
+                      onSave(
+                        firstNameRef.current?.value ?? currentUser.first_name,
+                        lastNameRef.current?.value ?? currentUser.last_name,
+                        emailRef.current?.value ?? currentUser.email
+                      )
+                    }
+                  >
+                    <Save />
+                  </button>
+                ) : (
+                  <>
+                    <button id="editButton" onClick={() => onEdit(currentUser)}>
+                      <Edit />
+                    </button>
+                    <button
+                      id="deleteButton"
+                      onClick={() => onDelete(currentUser)}
+                    >
+                      <Trash2 />
+                    </button>
+                  </>
+                )}
+              </td>
+            </tr>
+          );
+        })}
+      </table>
+    </div>
   );
 };

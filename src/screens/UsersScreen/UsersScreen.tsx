@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import logo from "./logo.svg";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { SearchBar } from "../../components/SearchBar/SearchBar";
-import { Table, User } from "../../components/Table";
-import { Filter } from "../../components/Filter";
+import { Table, User } from "../../components/Table/Table";
+import { Filter } from "../../components/Filter/Filter";
 import "./UsersScreen.scss";
 
 const localData = [
@@ -82,6 +82,7 @@ export const UsersScreen = () => {
 
   return (
     <div id="usersScreenBody">
+      <h1>USER LIST</h1>
       <SearchBar
         onChange={(newSearch) => setSearchTerm(newSearch.toLowerCase())}
       />
