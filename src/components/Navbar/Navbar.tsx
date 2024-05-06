@@ -7,8 +7,21 @@ export const Navbar = () => {
       <div id="navbarContainer">
         <img src={logo} id="logo" alt="Logo" height={120} width={120} />
         <div id="navLinksContainer">
-          <text className="navLinks">Link 1</text>
-          <text className="navLinks">Link 2</text>
+          <a
+            href="https://github.com/hklim1/rh-challenge-laravel-backend"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Laravel Repo
+          </a>
+          <a
+            href="https://github.com/hklim1/rh-challenge-react-version"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ReactJS Repo
+          </a>
+          <a href="/users">Users</a>
         </div>
       </div>
     </>
